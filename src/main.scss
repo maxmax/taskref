@@ -1,0 +1,55 @@
+//@import 'bootstrap/bootstrap.scss';
+
+// Custom variables and mixins
+@import "./style/var";
+// Core variables and mixins
+@import "./style/bootstrap/variables";
+@import "./style/bootstrap/mixins";
+@import "./style/bootstrap/custom";
+
+// Reset and dependencies
+@import "./style/bootstrap/normalize";
+@import "./style/bootstrap/print";
+
+// Core CSS
+@import "./style/bootstrap/reboot";
+@import "./style/bootstrap/type";
+//@import "./style/bootstrap/images";
+//@import "./style/bootstrap/code";
+@import "./style/bootstrap/grid";
+@import "./style/bootstrap/tables";
+@import "./style/bootstrap/forms";
+@import "./style/bootstrap/buttons";
+
+// Components
+@import "./style/bootstrap/transitions";
+//@import "./style/bootstrap/dropdown";
+//@import "./style/bootstrap/button-group";
+//@import "./style/bootstrap/input-group";
+//@import "./style/bootstrap/custom-forms";
+@import "./style/bootstrap/nav";
+@import "./style/bootstrap/navbar";
+@import "./style/bootstrap/card";
+//@import "./style/bootstrap/breadcrumb";
+//@import "./style/bootstrap/pagination";
+//@import "./style/bootstrap/badge";
+@import "./style/bootstrap/jumbotron";
+//@import "./style/bootstrap/alert";
+//@import "./style/bootstrap/progress";
+//@import "./style/bootstrap/media";
+@import "./style/bootstrap/list-group";
+//@import "./style/bootstrap/responsive-embed";
+//@import "./style/bootstrap/close";
+
+// Components w/ JavaScript
+//@import "./style/bootstrap/modal";
+//@import "./style/bootstrap/tooltip";
+//@import "./style/bootstrap/popover";
+//@import "./style/bootstrap/carousel";
+
+// Utility classes
+@import "./style/bootstrap/utilities";
+
+@import "./style/style";
+@import "components/elements/Range/rangeslider";
+@import "components/elements/ReactSelect/react-select";
