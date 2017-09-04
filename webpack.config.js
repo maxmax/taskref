@@ -59,8 +59,8 @@ module.exports = {
     extractTest,
     extractAuto,
     new webpack.HotModuleReplacementPlugin(),
-    extractSass
-    //uglifyjs
+    extractSass,
+    uglifyjs
   ],
   module: {
     rules: [

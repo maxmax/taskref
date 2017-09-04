@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Settings from './modules/settings';
-import TrelloWr from './modules/trello';
-//import * as actions from './actions';
 
 class App extends Component {
 
@@ -29,7 +27,6 @@ class App extends Component {
 
     return (
       <div className='app'>
-        <TrelloWr data={trello} />
         <Settings
           data={settings}
           update={this.updateData.bind(this)}
@@ -40,11 +37,10 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  const { words, settings, trello, todo } = state;
+  const { words, settings, todo } = state;
   return {
     words: words.words,
-    settings: settings.settings,
-    trello: trello
+    settings: settings.settings
   };
 }
 
