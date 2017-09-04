@@ -1,11 +1,8 @@
-## js-tests
+## taskref
 
 ```
-npm start
-npm run nodemon
-npm run build
-npm run client
-npm run watch
-npm run deploy
-
+yarn build
+yarn watch
+yarn start
+yarn deploy
 ```

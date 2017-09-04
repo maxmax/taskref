@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Button } from 'reactstrap';
 import Settings from './modules/settings';
+import TrelloWr from './modules/trello';
+//import * as actions from './actions';
 
 class App extends Component {
 
@@ -22,11 +23,13 @@ class App extends Component {
   updateData(config) {
     this.setState(config);
   }
-  
+
   render() {
-    const { words, settings } = this.props;
+    const { words, settings, trello } = this.props;
+
     return (
       <div className='app'>
+        <TrelloWr data={trello} />
         <Settings
           data={settings}
           update={this.updateData.bind(this)}
@@ -37,10 +40,11 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  const { words, settings } = state;
+  const { words, settings, trello, todo } = state;
   return {
-    words: words.words || [],
-    settings: settings.settings || {},
+    words: words.words,
+    settings: settings.settings,
+    trello: trello
   };
 }
 

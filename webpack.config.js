@@ -55,12 +55,12 @@ module.exports = {
     publicPath: ''
   },
   plugins: [
-    //new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist']),
     extractTest,
     extractAuto,
     new webpack.HotModuleReplacementPlugin(),
-    extractSass,
-    uglifyjs
+    extractSass
+    //uglifyjs
   ],
   module: {
     rules: [

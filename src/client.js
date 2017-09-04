@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-//import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 import App from './components/app';
 import './main.scss';
@@ -19,11 +19,29 @@ const store = createStore(
   applyMiddleware(sagaMiddleware),
 )
 sagaMiddleware.run(sagas)
+
 //const action = type => store.dispatch({type})
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  , document.getElementById('root'));
-//registerServiceWorker();
+const rootElement = document.getElementById('root');
+
+const render = (Root) => {
+  ReactDOM.render(
+    (
+      <Provider store={store}>
+        <Root />
+      </Provider>
+    ),
+    rootElement
+  );
+}
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('./components/app', () => {
+    var NextApp = require('./components/app').default;
+    render(NextApp);
+  });
+}
+
+registerServiceWorker();
