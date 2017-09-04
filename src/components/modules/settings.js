@@ -5,8 +5,8 @@ import PageHeader from '../elements/pageHeader';
 import Alerts from './settings/alerts';
 import Details from './settings/details';
 import Receiver from './settings/receiver';
+import { TodoList } from '../containers/todo';
 
-//TODO: "fiber" style
 function Settings({data, update}) {
   return (
     <SettingsLayout>
@@ -23,6 +23,7 @@ function Settings({data, update}) {
         </Col>
         <Col xs="12" sm="6" lg="3">
           <Receiver />
+          <TodoList />
         </Col>
       </Row>
     </SettingsLayout>
