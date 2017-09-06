@@ -24,11 +24,11 @@ function Settings({data, update, curent}) {
           <Details data={data.notifications[0]} />
         </Col>
         <Col xs="12" sm="6" lg="3">
-          <Receiver />
-          <TodoList />
+          <Receiver />        
         </Col>
         <Col xs="12" sm="12" lg="12">
           <Ui />
+          <TodoList />
           <br />
           <br />
           <br />
