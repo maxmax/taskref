@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
 import Select from 'react-select';
 
-//TODO: in dev
-function ReactSelect({label}) {
-
-  var options = [
-    { value: 'one', label: 'Signaling channels' },
-    { value: 'two', label: 'Storage' },
-    { value: 'three', label: 'Data channels' }
-  ];
+//TODO: in dev, on Higher-order
+function ReactSelect({label, value, options}) {
 
   const logChange = val => {
-    //console.log("logChange!");
     console.log("Selected: " + JSON.stringify(val));
   }
 
@@ -20,7 +13,7 @@ function ReactSelect({label}) {
       <label>{label}</label>
       <Select
         name="form-field-name"
-        value="one"
+        value={'0'}
         options={options}
         onChange={logChange}
       />

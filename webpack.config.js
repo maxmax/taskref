@@ -33,13 +33,6 @@ const extractAuto = new HtmlWebpackPlugin({
   chunks:['app']
 });
 
-const extractTest = new HtmlWebpackPlugin({
-  title: 'Output Tests',
-  filename: 'tests.html',
-  template: 'src/template/test.ejs',
-  inject: false
-});
-
 module.exports = {
   entry: {
     app: './src/client.js'
@@ -56,11 +49,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    extractTest,
     extractAuto,
     new webpack.HotModuleReplacementPlugin(),
-    extractSass,
-    uglifyjs
+    extractSass
+    //uglifyjs
   ],
   module: {
     rules: [

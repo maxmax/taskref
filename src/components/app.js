@@ -9,7 +9,9 @@ class App extends Component {
     this.state = {
       data: [],
       term: {},
-      curent: ''
+      curent: {
+        test: 0
+      }
     };
     this.resetData = this.resetData.bind(this);
   }
@@ -30,6 +32,7 @@ class App extends Component {
         <Settings
           data={settings}
           update={this.updateData.bind(this)}
+          curent={this.state}
         />
       </div>
     );
@@ -43,5 +46,10 @@ function mapStateToProps(state) {
     settings: settings.settings
   };
 }
+
+//function mapDispatchToProps (dispatch) {
+//  //onAdd: (item) => dispatch(addItem(item))
+//}
+//export default connect(mapStateToProps,mapDispatchToProps)(App);
 
 export default connect(mapStateToProps)(App);

@@ -38,12 +38,15 @@ const AlertsBox = ({title, text, data}) =>
     <Range
       label="Limitation per day"
       min={1}
+      max={400}
       value={data.limitation}
     />
   </Card>
 
-function Alerts({data, update}) {
+function Alerts({data, update, curent}) {
   const {email, sms, notifications} = data;
+
+  console.log("curent", curent);
 
   return (
     <div className="alerts">
@@ -68,6 +71,7 @@ function Alerts({data, update}) {
                 title={'Email alerts'}
                 text={'Email gate has limited number of Emails which it can send trough the day from current domain. Please limit the number of sending Emails.'}
                 data={email}
+                curent={curent}
               />
             </Col>
           </Row>

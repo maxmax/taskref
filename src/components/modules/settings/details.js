@@ -6,16 +6,17 @@ import ReactSelect from '../../elements/ReactSelect';
 import CollapseWr from '../../elements/CollapseWr';
 
 //TODO: props
-const CardForm = (props) =>
+const CardForm = ({category, event, state, curentId}) =>
   <section>
-    <CardTitle>Details [Signaling channels - Lim...]</CardTitle>
+    <CardTitle>Details [{category} - {event}]</CardTitle>
     <ReactSelect
       label="Event category"
+      value={curentId}
     />
     <ReactSelect label="Event" />
     <div className='form-group'>
       <label>Event state</label>
-      <Switch />
+      <Switch value={state} />
     </div>
     <Period label="Send notification via" />
     <br />
@@ -53,11 +54,20 @@ const Notification = (props) =>
 
 function Details(props) {
 
+  const {data} = props;
+
+  console.log("Details:", data)
+
   return (
     <div className="details">
       <Card>
         <CardBlock>
-          <CardForm />
+          <CardForm
+            curentId={data.id}
+            category={data.category}
+            event={data.event}
+            state={data.state}
+          />
         </CardBlock>
         <Notification />
       </Card>
